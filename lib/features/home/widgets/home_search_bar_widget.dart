@@ -10,7 +10,7 @@ class HomeSearchBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height * .01;
     return Container(
-      height: height * 7,
+      height: height * 100 <= 725 ? height * 8 : height * 7,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: const Color(0xFF313131)),

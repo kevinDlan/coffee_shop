@@ -52,6 +52,7 @@ class _OrderCoffeeScreenState extends State<OrderCoffeeScreen> {
   @override
   Widget build(BuildContext context) {
     unitPrice = widget.buyCoffeeData.price;
+    print(MediaQuery.of(context).size.height);
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

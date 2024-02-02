@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width * .01;
     return Scaffold(
       backgroundColor: Pallete.homePageBgColor,
       body: appPage[bottomNavBarCurrentIndex],
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: 4,
             itemBuilder: (context, index) {
               return Container(
-                width: 100,
+                width: width * 25,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(20)),
                 child: Material(

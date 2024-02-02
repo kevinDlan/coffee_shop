@@ -24,7 +24,7 @@ class _CoffeeDetailScreenState extends State<CoffeeDetailScreen> {
   bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height * .01;
+    double width = MediaQuery.of(context).size.width * .01;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -223,7 +223,7 @@ class _CoffeeDetailScreenState extends State<CoffeeDetailScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: 100,
+                  width: width * 25,
                   height: 70,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -256,7 +256,7 @@ class _CoffeeDetailScreenState extends State<CoffeeDetailScreen> {
                   ),
                 ),
                 Container(
-                  width: 100,
+                  width: width * 25,
                   height: 70,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -289,7 +289,7 @@ class _CoffeeDetailScreenState extends State<CoffeeDetailScreen> {
                   ),
                 ),
                 Container(
-                  width: 100,
+                  width: width * 25,
                   height: 70,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),

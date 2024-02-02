@@ -15,7 +15,7 @@ class CoffeeDataList {
               {
                 "id": 2,
                 "name": "Cappuccino",
-                "content": "with Black Coffee",
+                "content": "with Coffee",
                 "price": 3.5,
                 "rating": 4.0,
                 "image": "assets/coffees/coffe_two.png",
@@ -33,7 +33,7 @@ class CoffeeDataList {
               {
                 "id": 4,
                 "name": "Cappuccino",
-                "content": "with White Chocolate",
+                "content": "with Chocolate",
                 "price": 4.5,
                 "rating": 3.6,
                 "image": "assets/coffees/cappuccino_mocha.jpg",
@@ -41,7 +41,7 @@ class CoffeeDataList {
               },
               {
                 "id": 5,
-                "name": "Machiato Iced",
+                "name": "Machiato",
                 "content": "with Chocolate",
                 "price": 3.5,
                 "rating": 2.6,
@@ -50,7 +50,7 @@ class CoffeeDataList {
               },
               {
                 "id": 6,
-                "name": "Machiato Esp",
+                "name": "Machiato",
                 "content": "with Chocolate",
                 "price": 6.3,
                 "rating": 4.3,
@@ -59,8 +59,8 @@ class CoffeeDataList {
               },
               {
                 "id": 7,
-                "name": "Machiato Black",
-                "content": "with black Chocolate",
+                "name": "Machiato",
+                "content": "with Chocolate",
                 "price": 6.0,
                 "rating": 4.6,
                 "image": "assets/coffees/macchiato_black.png",
@@ -77,7 +77,7 @@ class CoffeeDataList {
               },
               {
                 "id": 9,
-                "name": "Latte Chocolate",
+                "name": "Chocolate",
                 "content": "with Chocolate",
                 "price": 5.5,
                 "rating": 4.1,
@@ -86,7 +86,7 @@ class CoffeeDataList {
               },
               {
                 "id": 10,
-                "name": "Latte Imperial",
+                "name": "Imperial",
                 "content": "with Oat Milk",
                 "price": 4.5,
                 "rating": 3.6,
@@ -95,7 +95,7 @@ class CoffeeDataList {
               },
               {
                 "id": 11,
-                "name": "Latte Moe",
+                "name": "Moe",
                 "content": "with Chocolate",
                 "price": 2.5,
                 "rating": 4.2,
@@ -104,7 +104,7 @@ class CoffeeDataList {
               },
               {
                 "id": 12,
-                "name": "Latte White",
+                "name": "White",
                 "content": "with Chocolate",
                 "price": 4.5,
                 "rating": 3.6,
@@ -114,7 +114,7 @@ class CoffeeDataList {
               {
                 "id": 13,
                 "name": "Americano",
-                "content": "with Black Chocolate",
+                "content": "with Chocolate",
                 "price": 1.99,
                 "rating": 5.99,
                 "image": "assets/coffees/americano_coffee_with_milk.jpg",
@@ -123,7 +123,7 @@ class CoffeeDataList {
               {
                 "id": 14,
                 "name": "Americano",
-                "content": "with Black Coffee",
+                "content": "with Coffee",
                 "price": 3.5,
                 "rating": 3.5,
                 "image": "assets/coffees/cafe_americano_portada.jpg",
@@ -132,7 +132,7 @@ class CoffeeDataList {
               {
                 "id": 15,
                 "name": "Americano",
-                "content": "with Black Coffee",
+                "content": "with Coffee",
                 "price": 4.5,
                 "rating": 3.6,
                 "image": "assets/coffees/americano_black.jpg",

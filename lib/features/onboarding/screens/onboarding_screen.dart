@@ -12,24 +12,25 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height * .01;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: height * 72,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/onboarding.png"),
-                    fit: BoxFit.fill),
-              ),
+      body: Stack(
+        children: [
+          Container(
+            height: height,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/onboarding.png"),
+                  fit: BoxFit.cover),
             ),
-            Container(
-              height: height * 30,
-              width: double.infinity,
+          ),
+          Positioned(
+            top: height < 800 ? height * 0.70 : height * 0.77,
+            child: Container(
+              width: width,
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              color: const Color(0xff020101),
+              color: const Color(0x9f000000),
               child: Column(
                 children: [
                   Text(
@@ -37,7 +38,7 @@ class OnboardingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.sora(
                         color: Pallete.whiteColor,
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(
@@ -47,7 +48,7 @@ class OnboardingScreen extends StatelessWidget {
                     "The best grain, the finest road, the powerful flavor",
                     textAlign: TextAlign.center,
                     style: GoogleFonts.sora(
-                        fontSize: 18,
+                        fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Pallete.subTitleColor),
                   ),
@@ -65,9 +66,9 @@ class OnboardingScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }

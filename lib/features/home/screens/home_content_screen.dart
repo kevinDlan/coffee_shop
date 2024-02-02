@@ -83,17 +83,17 @@ class HomeContentScreen extends StatelessWidget {
                         )
                       ]),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   const HomeSearchBarWidget()
                 ],
               ),
             ),
             Positioned(
-              top: 200,
+              top: height * 23,
               child: ZoomIn(
                 child: Container(
-                  height: height * 17,
+                  height: height * 19,
                   width: width * 85,
                   padding: const EdgeInsets.only(left: 25, top: 10),
                   margin: EdgeInsets.only(left: width * 8),

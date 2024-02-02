@@ -26,14 +26,8 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   final Completer<GoogleMapController> _mapController =
       Completer<GoogleMapController>();
 
-  static const CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 10.4746,
-  );
-
   static const LatLng _pApplePark = LatLng(37.3346, -122.0090);
-  static const LatLng _googlePlex =
-      LatLng(37.42796133580664, -122.085749655962);
+  static const LatLng _googlePlex = LatLng(37.427964, -122.08574);
 
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
 
@@ -117,7 +111,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         polylineCoordinate.add(LatLng(point.latitude, point.longitude));
       }
     } else {
-      print("PolylineError : ${polylineResult.errorMessage}");
+      throw Exception(polylineResult.errorMessage);
     }
 
     return polylineCoordinate;
@@ -154,19 +148,23 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
       body: Stack(fit: StackFit.expand, children: [
         _currentLocation != null
             ? GoogleMap(
-                initialCameraPosition: _kGooglePlex,
+                initialCameraPosition:
+                    const CameraPosition(target: _googlePlex, zoom: 13),
                 onMapCreated: ((GoogleMapController controller) =>
                     _mapController.complete(controller)),
                 markers: {
                   Marker(
+                      markerId: const MarkerId("_current_location"),
+                      icon: markerIcon,
+                      position: _currentLocation!),
+                  Marker(
                       markerId: const MarkerId("coffee_shop"),
                       icon: markerIcon,
-                      position:
-                          const LatLng(37.42796133580664, -122.085749655962)),
+                      position: _googlePlex),
                   Marker(
                       markerId: const MarkerId("delivery_place"),
                       icon: markerIcon,
-                      position: _currentLocation!),
+                      position: _pApplePark),
                 },
                 polylines: Set<Polyline>.of(polylines.values),
               )
@@ -325,7 +323,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                             height: 10,
                           ),
                           SizedBox(
-                            width: width * 65,
+                            width: width * 100 <= 360 ? width * 60 : width * 65,
                             child: Text(
                               "We deliver your goods to you in the shortes possible time.",
                               style: GoogleFonts.sora(
