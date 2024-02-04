@@ -95,7 +95,7 @@ class HomeContentScreen extends StatelessWidget {
                 child: Container(
                   height: height * 19,
                   width: width * 85,
-                  padding: const EdgeInsets.only(left: 25, top: 10),
+                  padding: const EdgeInsets.only(left: 25, top: 5),
                   margin: EdgeInsets.only(left: width * 8),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -107,7 +107,7 @@ class HomeContentScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const PromoWidget(),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: 10),
                       Container(
                         padding: const EdgeInsets.only(left: 5, right: 8),
                         decoration: const BoxDecoration(color: Colors.black),
@@ -115,7 +115,7 @@ class HomeContentScreen extends StatelessWidget {
                           "Buy one get",
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.sora(
-                              fontSize: 35,
+                              fontSize: 30,
                               wordSpacing: 5,
                               fontWeight: FontWeight.w600),
                         ),
@@ -126,15 +126,13 @@ class HomeContentScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.only(left: 5, right: 8),
                         decoration: const BoxDecoration(color: Colors.black),
-                        child: Positioned(
-                          child: Text(
-                            "one FREE",
-                            style: GoogleFonts.sora(
-                                fontSize: 32,
-                                height: 1.3,
-                                wordSpacing: 5,
-                                fontWeight: FontWeight.w600),
-                          ),
+                        child: Text(
+                          "one FREE",
+                          style: GoogleFonts.sora(
+                              fontSize: 30,
+                              height: 1.3,
+                              wordSpacing: 5,
+                              fontWeight: FontWeight.w600),
                         ),
                       )
                     ],

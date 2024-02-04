@@ -26,7 +26,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   final Completer<GoogleMapController> _mapController =
       Completer<GoogleMapController>();
 
-  static const LatLng _pApplePark = LatLng(37.3346, -122.0090);
+  static const LatLng _pApplePark = LatLng(37.4223, -122.0848);
   static const LatLng _googlePlex = LatLng(37.427964, -122.08574);
 
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
@@ -38,12 +38,13 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   Map<PolylineId, Polyline> polylines = {};
 
   void setMarkerIcon() {
-    // BitmapDescriptor.fromAssetImage(const ImageConfiguration(), "assets/images/")
-    //     .then((icon) {
-    //   setState(() {
-    //     markerIcon = icon;
-    //   });
-    // });
+    BitmapDescriptor.fromAssetImage(
+            const ImageConfiguration(), "assets/images/delivery.png")
+        .then((icon) {
+      setState(() {
+        markerIcon = icon;
+      });
+    });
   }
 
   Future<void> getUserCurrentLocation() async {
@@ -134,7 +135,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
   void initState() {
     super.initState();
     setMarkerIcon();
-    getUserCurrentLocation().then((value) => {
+    getUserCurrentLocation().then((_) => {
           getPolynineCoordinates()
               .then((coordonate) => {generatePolylineFromPoint(coordonate)})
         });
@@ -149,7 +150,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         _currentLocation != null
             ? GoogleMap(
                 initialCameraPosition:
-                    const CameraPosition(target: _googlePlex, zoom: 13),
+                    const CameraPosition(target: _googlePlex, zoom: 17),
                 onMapCreated: ((GoogleMapController controller) =>
                     _mapController.complete(controller)),
                 markers: {
@@ -157,14 +158,14 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
                       markerId: const MarkerId("_current_location"),
                       icon: markerIcon,
                       position: _currentLocation!),
-                  Marker(
-                      markerId: const MarkerId("coffee_shop"),
-                      icon: markerIcon,
+                  const Marker(
+                      markerId: MarkerId("coffee_shop"),
+                      icon: BitmapDescriptor.defaultMarker,
                       position: _googlePlex),
-                  Marker(
-                      markerId: const MarkerId("delivery_place"),
-                      icon: markerIcon,
-                      position: _pApplePark),
+                  // Marker(
+                  //     markerId: const MarkerId("delivery_place"),
+                  //     icon: markerIcon,
+                  //     position: _pApplePark),
                 },
                 polylines: Set<Polyline>.of(polylines.values),
               )

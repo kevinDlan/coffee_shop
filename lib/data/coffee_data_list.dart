@@ -116,7 +116,7 @@ class CoffeeDataList {
                 "name": "Americano",
                 "content": "with Chocolate",
                 "price": 1.99,
-                "rating": 5.99,
+                "rating": 5.9,
                 "image": "assets/coffees/americano_coffee_with_milk.jpg",
                 "category": "americano"
               },

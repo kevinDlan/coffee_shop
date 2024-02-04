@@ -26,38 +26,46 @@ class CoffeWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ZoomIn(
-                child: Container(
-                  height: height <= 725 ? height * 0.16 : height * 0.18,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage(coffee.image),
+                child: Stack(
+                  children: [
+                    Container(
+                      height: height <= 725 ? height * 0.16 : height * 0.18,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(coffee.image),
+                        ),
+                      ),
                     ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0, top: 8.0),
-                    child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Icon(
-                            Icons.star,
-                            color: Pallete.startColor,
-                            size: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 3, top: 3),
-                            child: Text(
-                              coffee.rating.toString(),
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.sora(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: Pallete.whiteColor),
+                    Container(
+                      width: 50,
+                      padding: const EdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                          color: const Color(0x9f111111),
+                          borderRadius: BorderRadiusDirectional.circular(20)),
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Icon(
+                              Icons.star,
+                              color: Pallete.startColor,
+                              size: 20,
                             ),
-                          )
-                        ]),
-                  ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 3, top: 3),
+                              child: Text(
+                                coffee.rating.toString(),
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.sora(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w600,
+                                    color: Pallete.whiteColor),
+                              ),
+                            )
+                          ]),
+                    )
+                  ],
                 ),
               ),
               Padding(
